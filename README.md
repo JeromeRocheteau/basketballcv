@@ -1,2 +1,2 @@
-# basketballcv
-BasketballCV: Computer Vision for Basketball Analytics
+# BasketballCV
+Computer Vision for Basketball Analytics
