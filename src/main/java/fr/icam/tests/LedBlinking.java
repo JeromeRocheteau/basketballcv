@@ -1,6 +1,10 @@
-package fr.icam.gpio;
+package fr.icam.tests;
 
 import java.io.IOException;
+
+import fr.icam.gpio.Gpio;
+import fr.icam.gpio.Pin;
+import fr.icam.gpio.Gpio.Mode;
 
 public class LedBlinking {
 
