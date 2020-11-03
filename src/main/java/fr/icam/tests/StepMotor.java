@@ -53,10 +53,10 @@ public class StepMotor {
 	    enaPin.high();
 	    // digitalWrite(PUL,HIGH);
 	    pulPin.high();
-	    this.busyWaitMillis(50);
+	    this.busyWaitMillis(5);
 	    // digitalWrite(PUL,LOW);
 	    pulPin.low();
-	    this.busyWaitMillis(50);
+	    this.busyWaitMillis(5);
 	  }
 	}
 
