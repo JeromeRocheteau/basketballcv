@@ -7,7 +7,7 @@ public class Gpio {
     /**
      * Print out debug info?
      */
-    public static boolean DEBUG = true;
+    public static boolean DEBUG = false;
 
     /**
      * Opens a given GPIO pin in a given mode
