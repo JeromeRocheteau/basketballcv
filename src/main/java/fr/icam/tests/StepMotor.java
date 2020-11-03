@@ -95,7 +95,7 @@ public class StepMotor {
     	int i = 0;
     	StepMotor app = new StepMotor();
     	app.setup();
-    	while (i++ < 10000) {
+    	while (true) {
     		app.loop();
     	}
     }
