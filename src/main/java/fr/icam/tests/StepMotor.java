@@ -8,9 +8,9 @@ import fr.icam.gpio.Mode;
 
 public class StepMotor {
 
-	private final int PUL = 7;
-	private final int DIR = 6;
-	private final int ENA = 5;
+	private final int PUL = 78;
+	private final int DIR = 77;
+	private final int ENA = 51;
 
 	private final int RES = 32;
 	private final int NUM = 200;
