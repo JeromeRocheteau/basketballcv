@@ -82,11 +82,15 @@ public class StepMotor {
     }
 	
 	void doSpeed() {
-	  spd = random.nextInt(32) + 1;
-	  System.out.print("speed = ");
-	  System.out.print(spd);
-	  System.out.print("\tcounter = ");
-	  System.out.println(cpt);
+		if (spd <= 0) {
+			spd = 1;
+		} else if (spd < 32) {
+			spd ++;
+		} else {
+			spd = 1;
+		}
+		System.out.print("speed = ");
+		System.out.print(spd);
 	}
 
 	public void loop() throws Exception {
