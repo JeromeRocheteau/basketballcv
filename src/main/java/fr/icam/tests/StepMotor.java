@@ -78,15 +78,14 @@ public class StepMotor {
     }
 	
 	void doSpeed() {
-		if (spd <= 0) {
+		if (spd <= 0 || spd >= 30) {
 			spd = 5;
-		} else if (spd < 30) {
-			spd += 5;
 		} else {
-			spd = 5;
+			spd += 5;
 		}
 		System.out.print("\nspeed = ");
 		System.out.print(spd);
+		System.out.flush();
 	}
 
 	public void loop() throws Exception {
