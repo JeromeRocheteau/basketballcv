@@ -1,6 +1,7 @@
 package fr.icam.tests;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import fr.icam.gpio.Gpio;
 import fr.icam.gpio.Pin;
@@ -45,7 +46,7 @@ public class StepMotor {
 		this.doSpeed();
 	}
 
-	void doStep(int num, boolean dir) {
+	void doStep(int num, boolean dir) throws Exception {
 	  for (int i = 0; i < num; i++) {
 	    // digitalWrite(DIR,dir ? HIGH : LOW);
 	    if (dir) {
@@ -57,7 +58,7 @@ public class StepMotor {
 	    enaPin.high();
 	    // digitalWrite(PUL,HIGH);
 	    pulPin.high();
-	    this.busyWaitMicros(5);
+	    TimeUnit.MICROSECONDS.sleep(5);
 	    // digitalWrite(PUL,LOW);
 	    pulPin.low();
 	  }
@@ -88,7 +89,7 @@ public class StepMotor {
 	  System.out.println(cpt);
 	}
 
-	public void loop() {
+	public void loop() throws Exception {
 	  if (has_spent(1, timestamp)) {
 	    timestamp = System.currentTimeMillis();
 	    if (cpt + spd > RES * NUM) {
