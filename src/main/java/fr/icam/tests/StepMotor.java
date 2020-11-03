@@ -78,7 +78,7 @@ public class StepMotor {
     }
 	
 	void doSpeed() {
-		spd = (random.nextInt() % 32) + 1;
+		spd = random.nextInt(32) + 1;
 		System.out.print("\nspeed = ");
 		System.out.print(spd);
 		System.out.print("\tts = ");
