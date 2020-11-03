@@ -48,18 +48,14 @@ public class StepMotor {
 
 	void doStep(int num, boolean dir) throws Exception {
 	  for (int i = 0; i < num; i++) {
-	    // digitalWrite(DIR,dir ? HIGH : LOW);
 	    if (dir) {
 	    	dirPin.high(); 
 	    } else {
 	    	dirPin.low();
 	    }
-	    // digitalWrite(ENA,HIGH);
 	    enaPin.high();
-	    // digitalWrite(PUL,HIGH);
 	    pulPin.high();
-	    busyWaitMicros(1);
-	    // digitalWrite(PUL,LOW);
+	    busyWaitMicros(50);
 	    pulPin.low();
 	  }
 	}
@@ -89,7 +85,7 @@ public class StepMotor {
 		} else {
 			spd = 1;
 		}
-		System.out.print("speed = ");
+		System.out.print("\nspeed = ");
 		System.out.print(spd);
 	}
 
