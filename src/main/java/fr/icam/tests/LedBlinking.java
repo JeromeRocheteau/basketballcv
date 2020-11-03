@@ -4,13 +4,13 @@ import java.io.IOException;
 
 import fr.icam.gpio.Gpio;
 import fr.icam.gpio.Pin;
-import fr.icam.gpio.Gpio.Mode;
+import fr.icam.gpio.Mode;
 
 public class LedBlinking {
 
     public void testLed() throws IOException {
         try {
-        	Pin pin = Gpio.open(79, Gpio.Mode.OUTPUT);
+        	Pin pin = Gpio.open(79, Mode.OUTPUT);
             for (int i = 0; i < 60; i++) {
                 if(i % 2 == 0) {
                     pin.high();
@@ -23,7 +23,7 @@ public class LedBlinking {
                     e.printStackTrace();
                 }
             }
-            pin.close();
+            Gpio.close(pin);
         } catch (IOException e) {
             throw e;
         }

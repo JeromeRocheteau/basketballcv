@@ -5,9 +5,10 @@ import java.io.Closeable;
 public class Pin implements Closeable {
 
     private int number;
-    private Gpio.Mode mode;
+    
+    private Mode mode;
 
-    Pin(int number, Gpio.Mode mode) {
+    Pin(int number, Mode mode) {
         this.number = number;
         this.mode = mode;
     }
@@ -38,7 +39,7 @@ public class Pin implements Closeable {
      * Changes the mode of the pin
      * @param mode the pin mode
      */
-    public void setMode(Gpio.Mode mode) {
+    public void setMode(Mode mode) {
         Sysfs.setMode(number, mode);
     }
 
@@ -54,7 +55,7 @@ public class Pin implements Closeable {
      * Mode of this pin
      * @return the mode
      */
-    public Gpio.Mode getMode() {
+    public Mode getMode() {
         return mode;
     }
 

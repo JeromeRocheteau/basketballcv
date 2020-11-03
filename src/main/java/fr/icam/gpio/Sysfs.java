@@ -21,7 +21,7 @@ class Sysfs {
      * @param gpioNumber the pin number
      * @param mode the mode to configure to
      */
-    static void setMode(int gpioNumber, Gpio.Mode mode) {
+    static void setMode(int gpioNumber, Mode mode) {
         safeWrite(GPIO_BASE+gpioNumber+DIRECTION_ENDPOINT, mode.id());
     }
 
