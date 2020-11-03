@@ -21,10 +21,12 @@ public class StepMotor {
 	private int spd;
 	private int cpt;
 	private long timestamp;
+	private boolean led;
 	
 	private Pin pulPin;
 	private Pin dirPin;
 	private Pin enaPin;
+	private Pin ledPin;
 
 	private boolean has_spent(long duration, long ts) {
 	  return System.currentTimeMillis() - ts > duration;
@@ -36,8 +38,10 @@ public class StepMotor {
 		pulPin = Gpio.open(PUL, Mode.OUTPUT);
 		dirPin = Gpio.open(DIR, Mode.OUTPUT);
 		enaPin = Gpio.open(ENA, Mode.OUTPUT);
+		ledPin = Gpio.open(79, Mode.OUTPUT);
 		dir = true;
 		cpt = 0;
+		led = false;
 		this.doSpeed();
 	}
 
@@ -60,6 +64,16 @@ public class StepMotor {
 	  }
 	}
 
+	private void toggle() {
+		if (led) {
+			led = false;
+			ledPin.low();
+		} else {
+			led = true;
+			ledPin.high();
+		}
+	}
+	
 	private void busyWaitMillis(long micros) {
         long waitUntil = System.currentTimeMillis() + (micros);
         while (waitUntil > System.currentTimeMillis()) {
@@ -86,6 +100,7 @@ public class StepMotor {
 	      cpt = 0;
 	    }
 	    doStep(spd, dir);
+	    toggle();
 	    cpt += spd;
 	  }
 	}
