@@ -81,6 +81,8 @@ public class StepMotor {
 		spd = (random.nextInt() % 32) + 1;
 		System.out.print("\nspeed = ");
 		System.out.print(spd);
+		System.out.print("\tts = ");
+		System.out.print(System.currentTimeMillis());
 		System.out.flush();
 	}
 
