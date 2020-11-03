@@ -1,7 +1,6 @@
 package fr.icam.tests;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import fr.icam.gpio.Gpio;
 import fr.icam.gpio.Pin;
@@ -84,6 +83,7 @@ public class StepMotor {
 		System.out.print("\tts = ");
 		System.out.print(System.currentTimeMillis());
 		System.out.flush();
+		toggle();
 	}
 
 	public void loop() throws Exception {
@@ -97,14 +97,12 @@ public class StepMotor {
 	      cpt = 0;
 	    }
 	    doStep(spd, dir);
-	    toggle();
 	    cpt += spd;
 	  }
 	}
 	
 	
     public static void main(String[] args) throws Exception {
-    	int i = 0;
     	StepMotor app = new StepMotor();
     	app.setup();
     	while (true) {
