@@ -79,11 +79,11 @@ public class StepMotor {
 	
 	void doSpeed() {
 		if (spd <= 0) {
-			spd = 1;
-		} else if (spd < 32) {
-			spd ++;
+			spd = 5;
+		} else if (spd < 30) {
+			spd += 5;
 		} else {
-			spd = 1;
+			spd = 5;
 		}
 		System.out.print("\nspeed = ");
 		System.out.print(spd);
