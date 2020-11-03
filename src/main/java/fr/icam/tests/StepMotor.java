@@ -77,12 +77,11 @@ public class StepMotor {
         }
     }
 	
+	private int lcp = 0;
+	
 	void doSpeed() {
-		if (spd <= 0 || spd >= 30) {
-			spd = 5;
-		} else {
-			spd += 5;
-		}
+		lcp++;
+		spd = ((lcp % 6) + 1) * 5;
 		System.out.print("\nspeed = ");
 		System.out.print(spd);
 		System.out.flush();
