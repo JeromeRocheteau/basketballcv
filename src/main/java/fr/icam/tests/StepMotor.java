@@ -57,10 +57,10 @@ public class StepMotor {
 	    enaPin.high();
 	    // digitalWrite(PUL,HIGH);
 	    pulPin.high();
-	    this.busyWaitMillis(5);
+	    this.busyWaitMicros(50);
 	    // digitalWrite(PUL,LOW);
 	    pulPin.low();
-	    this.busyWaitMillis(5);
+	    this.busyWaitMicros(50);
 	  }
 	}
 
@@ -74,9 +74,9 @@ public class StepMotor {
 		}
 	}
 	
-	private void busyWaitMillis(long micros) {
-        long waitUntil = System.currentTimeMillis() + (micros);
-        while (waitUntil > System.currentTimeMillis()) {
+	private void busyWaitMicros(long micros) {
+        long waitUntil = System.nanoTime() + (micros * 1000);
+        while (waitUntil > System.nanoTime()) {
             ;
         }
     }
