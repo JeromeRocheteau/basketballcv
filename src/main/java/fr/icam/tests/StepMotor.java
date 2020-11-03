@@ -58,7 +58,7 @@ public class StepMotor {
 	    enaPin.high();
 	    // digitalWrite(PUL,HIGH);
 	    pulPin.high();
-	    TimeUnit.MICROSECONDS.sleep(5);
+	    busyWaitMicros(1);
 	    // digitalWrite(PUL,LOW);
 	    pulPin.low();
 	  }
