@@ -55,7 +55,7 @@ public class StepMotor {
 	    }
 	    enaPin.high();
 	    pulPin.high();
-	    busyWaitMicros(50);
+	    busyWaitMicros(500);
 	    pulPin.low();
 	  }
 	}
@@ -71,7 +71,7 @@ public class StepMotor {
 	}
 	
 	private void busyWaitMicros(long micros) {
-        long waitUntil = System.nanoTime() + (micros * 1000);
+        long waitUntil = System.nanoTime() + (micros);
         while (waitUntil > System.nanoTime()) {
             ;
         }
